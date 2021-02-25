@@ -83,7 +83,7 @@ function addEngineer(){
         crossroads();
     })
 }
-addEngineer();
+//addEngineer();
 
 function addIntern(){
     inquirer.prompt([
@@ -114,7 +114,7 @@ function addIntern(){
         crossroads();
     })
 }
-addIntern();
+//addIntern();
 function buildTeam(){
 
 }
