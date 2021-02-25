@@ -11,31 +11,31 @@ const outputPath = path.join(OUTPUT_DIR, 'team.html');
 const render = require('./lib/htmlRender');
 const teamArray = [];
 
-function crossroads() {
+function crossroads(){
 
 }
-function addManager() {
+function addManager(){
     inquirer.prompt([
         {
-            type: 'input',
-            name: 'managerName',
-            message: 'What is your Manager\'s Name?'
+           type:'input',
+           name:'managerName',
+           message:'What is your Manager\'s Name?'
         },
         {
-            type: 'input',
-            name: 'managerId',
-            message: 'What is your Manager\'s Id?'
-        },
+           type:'input',
+           name:'managerId',
+           message:'What is your Manager\'s Id?'
+        },        
         {
-            type: 'input',
-            name: 'managerEmail',
-            message: 'What is your Manager\'s email?'
-        },
+           type:'input',
+           name:'managerEmail',
+           message:'What is your Manager\'s email?'
+        },        
         {
-            type: 'input',
-            name: 'officeNo',
-            message: 'What is your Manager\'s officeno?'
-        },
+           type:'input',
+           name:'officeNo',
+           message:'What is your Manager\'s officeno?'
+        },        
     ]).then(res => {
         console.log(res);
         const manager = new Manager(res.managerName, res.managerId, res.managerEmail, res.officeNo);
@@ -45,27 +45,27 @@ function addManager() {
 }
 addManager();
 
-function addEngineer() {
+function addEngineer(){
     inquirer.prompt([
         {
-            type: 'input',
-            name: 'engineerName',
-            message: 'What is your Engineer\'s Name?'
+            type:'input',
+            name:'engineerName',
+            message:'What is your Engineer\'s Name?'
         },
         {
-            type: 'input',
-            name: 'engineerId',
-            message: 'What is your Engineer\'s Id?'
+            type:'input',
+            name:'engineerId',
+            message:'What is your Engineer\'s Id?'
         },
         {
-            type: 'input',
-            name: 'engineerEmail',
-            message: 'What is your Engineer\'s Email?'
+            type:'input',
+            name:'engineerEmail',
+            message:'What is your Engineer\'s Email?'
         },
         {
-            type: 'input',
-            name: 'github',
-            message: 'What is your Engineer\'s Github?'
+            type:'input',
+            name:'github',
+            message:'What is your Engineer\'s Github?'
         },
     ]).then(res => {
         console.log(res);
@@ -76,27 +76,27 @@ function addEngineer() {
 }
 addEngineer();
 
-function addIntern() {
+function addIntern(){
     inquirer.prompt([
         {
-            type: 'input',
-            name: 'internName',
-            message: 'What is your Intern\'s Name?'
+            type:'input',
+            name:'internName',
+            message:'What is your Intern\'s Name?'
         },
         {
-            type: 'input',
-            name: 'internId',
-            message: 'What is your Intern\'s Id?'
+            type:'input',
+            name:'internId',
+            message:'What is your Intern\'s Id?'
         },
         {
-            type: 'input',
-            name: 'internEmail',
-            message: 'What is your Intern\'s Email?'
+            type:'input',
+            name:'internEmail',
+            message:'What is your Intern\'s Email?'
         },
         {
-            type: 'input',
-            name: 'internSchool',
-            message: 'What is your Intern\'s School?'
+            type:'input',
+            name:'internSchool',
+            message:'What is your Intern\'s School?'
         },
     ]).then(res => {
         console.log(res);
@@ -107,38 +107,8 @@ function addIntern() {
 }
 addIntern();
 
-function buildTeam() {
-    inquirer.prompt([
-        {
-            type: "list",
-            name: "addMember",
-            message: "What type of team member are you?",
-            choices: [
-                "Manager",
-                "Engineer",
-                "Intern",
-                "No more employees"
-            ]
-        }
-
-    ]).then(userChoice => {
-        switch (userChoice.memberChoice) {
-            case "Manager":
-                addManager();
-                break;
-
-            case "Engineer":
-                addEngineer();
-                break;
-
-            case "Intern":
-                addIntern();
-                break;
-
-            case "No more employees":
-                render(teamMembers);
-                break
-        };
+function buildTeam()
+    
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
