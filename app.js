@@ -11,15 +11,24 @@ const outputPath = path.join(OUTPUT_DIR, 'team.html');
 const render = require('./lib/htmlRender');
 const teamArray = [];
 
-function crossroads(){
+function crossroads () {
     inquirer.prompt(
-            {
-               type:'list',
-               name:'choice',
-               message:'Do you want to add more members?',
-    choices:["eng","intern","finish"]
-            }).then(fucntion(res){
-    }
+        {
+            type: 'list',
+            name: 'choice',
+            message: 'Do you want to add more members?',
+            choices: ["eng", "intern", "finish"]
+        }).then(function (res) {
+            console.log(res)
+            if(res.choice==="eng"){
+                addEngineer()
+            }
+            else if (res.choice==="intern"){
+                addIntern()
+            }else{
+                buildTeam()
+            }
+        })
 }
     
 function addManager(){
