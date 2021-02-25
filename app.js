@@ -12,9 +12,18 @@ const render = require('./lib/htmlRender');
 const teamArray = [];
 
 function crossroads(){
-
+    inquirer.prompt(
+            {
+               type:'list',
+               name:'choice',
+               message:'Do you want to add more members?',
+    choices:["eng","intern","finish"]
+            }).then(fucntion(res){
+    }
 }
+    
 function addManager(){
+
     inquirer.prompt([
         {
            type:'input',
