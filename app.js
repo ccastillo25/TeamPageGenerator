@@ -17,10 +17,10 @@ function crossroads () {
             type: 'list',
             name: 'choice',
             message: 'Do you want to add more members?',
-            choices: ["eng", "intern", "finish"]
+            choices: ["engineer", "intern", "finish"]
         }).then(function (res) {
             console.log(res)
-            if(res.choice==="eng"){
+            if(res.choice==="engineer"){
                 addEngineer()
             }
             else if (res.choice==="intern"){
